@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback, InputHTMLAttributes } from "react";
 
 import { IconBaseProps } from "react-icons";
 
@@ -6,9 +6,9 @@ import { useField } from "@unform/core";
 
 import { Container } from "./styles";
 
-interface InputProps {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
-  icon: React.ComponentType<IconBaseProps>;
+  icon?: React.ComponentType<IconBaseProps>;
 }
 
 const Input = ({ name, icon: Icon, ...rest }: InputProps) => {
